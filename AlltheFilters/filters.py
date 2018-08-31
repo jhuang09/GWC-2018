@@ -133,7 +133,8 @@ def pixelate(image, pixel_size):
 	# now we'll actually get to work with the image
 
 	# each row chunk starts at size of pixelation * width
-	new_row = pixel_size * image.width
+	
+	'''new_row = pixel_size * image.width
 
 	pixels = list(image.getdata())
 	new_colors = [0] * len(pixels)
@@ -145,6 +146,34 @@ def pixelate(image, pixel_size):
 			for sub_pixel_row in range(pixel_size):
 				for sub_pixel_width in range(pixel_size):
 					new_colors[row + column + sub_pixel_row * image.width + sub_pixel_width] = pixels[row + column]
+	image.putdata(new_colors)'''
+
+	new_row = pixel_size * image.width
+
+	pixels = list(image.getdata())
+	new_colors = [0] * len(pixels)
+
+	# iterate through each chunk and average the colors
+	for row in range(0, len(pixels), new_row):
+		for column in range(0, image.width, pixel_size):
+			red = 0
+			green = 0
+			blue = 0
+			for sub_pixel_row in range(pixel_size):
+				for sub_pixel_width in range(pixel_size):
+					red += pixels[row + column][0]
+					green += pixels[row + column][1]
+					blue += pixels[row + column][2]
+			#average the RGB values and create a tuple
+			red = red // (pixel_size ** 2)
+			green = green // (pixel_size ** 2)
+			blue = blue // (pixel_size ** 2)
+			new_pixel = (red, green, blue)
+
+			# now add the pixels to the list of new colors
+			for sub_pixel_row in range(pixel_size):
+				for sub_pixel_width in range(pixel_size):
+					new_colors[row + column + sub_pixel_row * image.width + sub_pixel_width] = new_pixel
 	image.putdata(new_colors)
 
 
