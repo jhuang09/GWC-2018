@@ -1,0 +1,141 @@
+body{
+	background-color: #222222;
+	font-family: "Roboto Condensed";
+	padding: 0 10%;
+	color:#ffffcc;
+	font-size: 18px;
+}
+
+h1{
+	color: #ffcccc;
+	text-align: center;
+}
+
+h2, h3, h4, h5, h6, p{
+	color: #ffffcc;
+}
+
+h2{
+	font-size: 28px;
+	font-style: italic;
+}
+
+p{
+	font-size: 18px;
+}
+
+/* navigation bar */
+nav{
+	overflow: hidden;
+	/*background: linear-gradient(#ccffff, #ffcccc);*/
+	background-color: #ccffff;
+	margin: auto;
+	border-radius: 5%;
+	padding: 2px 10px;
+}
+
+/* links in navigation bar */
+nav a{
+	float: left;
+	overflow: hidden;
+	font-size: 20px;
+	border: none;
+	outline: none;
+	color: white;
+	padding: 14px 16px;
+	background-color: inherit;
+	font-family: inherit;
+	margin: 4px;
+	color: #e5b7b7;
+	font-weight: bold;
+	text-decoration: none;
+	border: 4px dotted #B7CFE5;
+	border-radius: 50%;
+}
+
+img{
+	margin: 0 10px;
+	height: 42px;
+}
+
+img:hover{
+	filter:invert(30%);
+}
+
+a{
+	color:#ffffcc;
+}
+
+.banner{
+	font-family: "Open Sans";
+	position: relative;
+}
+
+/* general dropdown blueprint */
+.drop{
+	float: left;
+	overflow: hidden;
+}
+
+/* the dropdown button */
+.dropbtn{
+	font-size: 20px;
+	border: none;
+	outline: none;
+	color: white;
+	padding: 14px 16px;
+	background-color: inherit;
+	font-family: inherit;
+	margin: 4px;
+	color: #e5b7b7;
+	font-weight: bold;
+	border: 4px dotted #B7CFE5;
+	border-radius: 50%;
+}
+
+/* change color of text when hovered */
+.dropbtn:hover{
+	color: #ffffcc;
+}
+
+/* cast shadow when hovered */
+nav a:hover, .drop:hover{
+	box-shadow: 2px 0px 6px 0px rgba(0,0,0,0.2);
+	border-radius: 50%;
+	color: #ffffcc;
+}
+
+/* the dropdown menu; hidden at first*/
+.dropdown{
+	display: none;
+	position: absolute;
+	background-color: #ffcccc;
+	min-width: inherit;
+	z-index: 1;
+	border-radius: 10%;
+	padding: 5px;
+}
+
+/* pertaining links in dropdown */
+.dropdown a{
+	float: none;
+	color: black;
+	padding: 12px, 16px;
+	text-decoration: none;
+	display: block;
+	text-align: left;
+	color: #ffffcc;
+	font-weight: bold;
+}
+
+/* the links' bg colors change when hovered */
+.dropdown a:hover{
+	background-color: #ccffff;
+	color: #ffcccc;
+	box-shadow: 4px 8px 10px 0px rgba(0,0,0,0.2);
+}
+
+/* show dropdown menu when hovered */
+nav .drop:hover .dropdown{
+	display: block;
+}
