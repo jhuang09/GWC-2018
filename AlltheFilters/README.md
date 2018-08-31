@@ -1,4 +1,4 @@
-#All the Filters
+<b>All the Filters</b>\
 Here is a project that takes an image from your computer and applies selected filters to it. The user gets to choose what filters to apply and the program will save it onto their computer. This program primarily uses the PIL library to modify the image.
 
 filtergram.py: run this file in order to interact with the user and pictures\
